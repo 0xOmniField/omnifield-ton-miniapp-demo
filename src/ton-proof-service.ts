@@ -1,9 +1,9 @@
-import {sha256} from "@ton/crypto";
-import {Address, Cell, contractAddress, loadStateInit} from "@ton/ton";
-import {Buffer} from "buffer";
-import {randomBytes, sign} from "tweetnacl";
-import {CheckProofRequestDto} from "./dto/check-proof-request-dto";
-import {tryParsePublicKey} from "./wrappers/wallets-data";
+import { sha256 } from "@ton/crypto";
+import { Address, Cell, contractAddress, loadStateInit } from "@ton/ton";
+import { Buffer } from "buffer";
+import { randomBytes, sign } from "tweetnacl";
+import { CheckProofRequestDto } from "./dto/check-proof-request-dto";
+import { tryParsePublicKey } from "./wrappers/wallets-data";
 
 const tonProofPrefix = 'ton-proof-item-v2/';
 const tonConnectPrefix = 'ton-connect';
@@ -15,12 +15,12 @@ const allowedDomains = [
 const validAuthTime = 15 * 60; // 15 minute
 
 export class TonProofService {
- 
+
   /**
    * Generate a random payload.
    */
   public generatePayload(): {} {
-    return {tonProof:Buffer.from(randomBytes(32)).toString('hex')};
+    return { tonProof: Buffer.from(randomBytes(32)).toString('hex') };
   }
 
   /**

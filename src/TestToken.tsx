@@ -17,7 +17,7 @@ export const TestToken = () => {
 
     return <button
         onClick={() => {
-            console.log("验证成功，token",token)
+            console.log("验证成功，token", token)
         }}
     >验证成功</button>
 }
